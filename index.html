@@ -1,19 +1,109 @@
-<html>
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#Id1" aria-controls="Id1">Enable both scrolling & backdrop</button>
+<!doctype html>
+<html> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>Basketball Website</title> 
+  <link rel="stylesheet" type="text/css" href="styles.css"> 
+ </head> 
+ <body> 
+  <header> 
+   <h1>Welcome to the Basketball Website</h1> 
+  </header> 
+  <nav> 
+   <ul> 
+    <li><a href="#home">Home</a></li> 
+    <li><a href="#teams">Teams</a></li> 
+    <li><a href="#players">Players</a></li> 
+    <li><a href="#schedule">Schedule</a></li> 
+   </ul> 
+  </nav> 
+  <main> 
+   <section id="home"> 
+    <h2>Home</h2> <!-- Content for the Home page goes here --> 
+   </section> 
+   <section id="teams" style="display: none;"> 
+    <h2>Teams</h2> 
+    <div class="team"> 
+     <img src="team_logo_1.jpg" alt="Team 1 Logo"> 
+     <h3>Team 1</h3> 
+     <p>Description of Team 1.</p> 
+    </div> 
+    <div class="team"> 
+     <img src="team_logo_2.jpg" alt="Team 2 Logo"> 
+     <h3>Team 2</h3> 
+     <p>Description of Team 2.</p> 
+    </div> <!-- Add more team sections as needed --> 
+   </section> 
+   <section id="players" style="display: none;"> 
+    <h2>Players</h2> 
+    <div class="player"> 
+     <img src="player_image_1.jpg" alt="Player 1"> 
+     <h3>Player 1</h3> 
+     <p>Position: Point Guard</p> 
+    </div> 
+    <div class="player"> 
+     <img src="player_image_2.jpg" alt="Player 2"> 
+     <h3>Player 2</h3> 
+     <p>Position: Shooting Guard</p> 
+    </div> <!-- Add more player sections as needed --> 
+   </section> 
+   <section id="schedule" style="display: none;"> 
+    <h2>Schedule</h2> 
+    <table> 
+     <tbody>
+      <tr> 
+       <th>Date</th> 
+       <th>Opponent</th> 
+       <th>Location</th> 
+       <th>Time</th> 
+      </tr> 
+      <tr> 
+       <td>2023-11-15</td> 
+       <td>Opponent 1</td> 
+       <td>Arena 1</td> 
+       <td>7:00 PM</td> 
+      </tr> 
+      <tr> 
+       <td>2023-11-18</td> 
+       <td>Opponent 2</td> 
+       <td>Arena 2</td> 
+       <td>6:30 PM</td> 
+      </tr> <!-- Add more game schedule rows as needed --> 
+     </tbody>
+    </table> 
+   </section> 
+   <section id="news"> 
+    <h2>Latest News</h2> 
+    <p>Stay up to date with the latest basketball news.</p> 
+   </section> 
+  </main> 
+  <footer> 
+   <p>© 2023 Basketball Website</p> 
+  </footer> 
+  <script src="script.js"></script> 
+  <script>
+        // JavaScript to show/hide content based on navigation links
+        const homeLink = document.querySelector('a[href="#home"]');
+        const teamsLink = document.querySelector('a[href="#teams"]');
+        const playersLink = document.querySelector('a[href="#players"]');
+        
+        homeLink.addEventListener('click', () => {
+            document.getElementById('home').style.display = 'block';
+            document.getElementById('teams').style.display = 'none';
+            document.getElementById('players').style.display = 'none';
+        });
+        
+        teamsLink.addEventListener('click', () => {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('teams').style.display = 'block';
+            document.getElementById('players').style.display = 'none';
+        });
 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="Id1" aria-labelledby="Enable both scrolling & backdrop">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="Enable both scrolling & backdrop">Backdrop with scrolling</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <p>Try scrolling the rest of the page to see this option in action.</p>
-  </div>
-</div> 
- <div class="form-floating mb-3">
-   <input
-     type="text"
-     class="form-control" name="formId1" id="formId1" placeholder="">
-   <label for="formId1">Name</label>
- </div>
+        playersLink.addEventListener('click', () => {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('teams').style.display = 'none';
+            document.getElementById('players').style.display = 'block';
+        });
+    </script> 
+ </body>
 </html>
